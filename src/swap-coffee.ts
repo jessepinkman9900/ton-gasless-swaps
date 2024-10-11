@@ -1,5 +1,7 @@
 import pino from "pino";
 import { ApiTokenAddress, RoutingApi } from "@swap-coffee/sdk";
+import TonConnect from "@tonconnect/sdk";
+import isWallet
 
 const logger = pino({
   level: "info", // Set the default log level
@@ -10,6 +12,8 @@ const logger = pino({
     },
   },
 });
+
+// const connector = new TonConnect();
 
 async function main(): Promise<void> {
   logger.info("start");
@@ -42,12 +46,17 @@ async function main(): Promise<void> {
   // build txn payload
   logger.info("building txn payload");
   const txn = await routingApi.buildTransactionsV2({
-    sender_address: "", // todo: get from wallet connector
+    sender_address: "UQAAfErxg2ls6XBF1qRcA004b_wSio_2LysHTncp8COhQE8z", // todo: get from wallet connector
     slippage: 0.1, // 10% slippage
     paths: route?.data?.paths,
   });
   logger.info("txn payload");
   logger.info(txn.data);
+
+	// wallet
+	const walletList = await TonConnect.getWallets();
+	logger.info("wallets")
+	logger.info(walletList)
 }
 
 main();

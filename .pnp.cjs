@@ -29,6 +29,9 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@eslint/js", "npm:9.12.0"],\
           ["@swap-coffee/sdk", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:1.2.1"],\
+          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.58.1"],\
+          ["@ton/crypto", "npm:3.3.0"],\
+          ["@tonconnect/sdk", "npm:3.0.5"],\
           ["@types/eslint__js", "npm:8.42.3"],\
           ["@types/node", "npm:22.7.4"],\
           ["@types/pino", "npm:7.0.5"],\
@@ -289,8 +292,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@swap-coffee-sdk-virtual-9584062e34/4/.yarn/berry/cache/@swap-coffee-sdk-npm-1.2.1-5da751c100-10c0.zip/node_modules/@swap-coffee/sdk/",\
         "packageDependencies": [\
           ["@swap-coffee/sdk", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:1.2.1"],\
-          ["@ton/core", null],\
-          ["@tonconnect/sdk", null],\
+          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.58.1"],\
+          ["@tonconnect/sdk", "npm:3.0.5"],\
           ["@types/axios", null],\
           ["@types/ton__core", null],\
           ["@types/tonconnect__sdk", null],\
@@ -303,6 +306,94 @@ const RAW_RUNTIME_STATE =
           "@types/ton__core",\
           "@types/tonconnect__sdk",\
           "axios"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@ton/core", [\
+      ["npm:0.58.1", {\
+        "packageLocation": "../../../.yarn/berry/cache/@ton-core-npm-0.58.1-8fa7cb0312-10c0.zip/node_modules/@ton/core/",\
+        "packageDependencies": [\
+          ["@ton/core", "npm:0.58.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.58.1", {\
+        "packageLocation": "./.yarn/__virtual__/@ton-core-virtual-c41e8e279d/4/.yarn/berry/cache/@ton-core-npm-0.58.1-8fa7cb0312-10c0.zip/node_modules/@ton/core/",\
+        "packageDependencies": [\
+          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.58.1"],\
+          ["@ton/crypto", "npm:3.3.0"],\
+          ["@types/ton__crypto", null],\
+          ["symbol.inspect", "npm:1.0.1"]\
+        ],\
+        "packagePeers": [\
+          "@ton/crypto",\
+          "@types/ton__crypto"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@ton/crypto", [\
+      ["npm:3.3.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/@ton-crypto-npm-3.3.0-ceede790b6-10c0.zip/node_modules/@ton/crypto/",\
+        "packageDependencies": [\
+          ["@ton/crypto", "npm:3.3.0"],\
+          ["@ton/crypto-primitives", "npm:2.1.0"],\
+          ["jssha", "npm:3.2.0"],\
+          ["tweetnacl", "npm:1.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@ton/crypto-primitives", [\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/@ton-crypto-primitives-npm-2.1.0-3d1ea62176-10c0.zip/node_modules/@ton/crypto-primitives/",\
+        "packageDependencies": [\
+          ["@ton/crypto-primitives", "npm:2.1.0"],\
+          ["jssha", "npm:3.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tonconnect/isomorphic-eventsource", [\
+      ["npm:0.0.2", {\
+        "packageLocation": "../../../.yarn/berry/cache/@tonconnect-isomorphic-eventsource-npm-0.0.2-98dd26f647-10c0.zip/node_modules/@tonconnect/isomorphic-eventsource/",\
+        "packageDependencies": [\
+          ["@tonconnect/isomorphic-eventsource", "npm:0.0.2"],\
+          ["eventsource", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tonconnect/isomorphic-fetch", [\
+      ["npm:0.0.3", {\
+        "packageLocation": "../../../.yarn/berry/cache/@tonconnect-isomorphic-fetch-npm-0.0.3-3661f4509c-10c0.zip/node_modules/@tonconnect/isomorphic-fetch/",\
+        "packageDependencies": [\
+          ["@tonconnect/isomorphic-fetch", "npm:0.0.3"],\
+          ["node-fetch", "virtual:3661f4509cafc1039c60245515516e92bc4e2b28aac09603166e6ffbbefd76eda6a8a8ebb00d43bdc7cf2de6b59b8ab6d31c3d6cc1733b63e001d601343af0ba#npm:2.7.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tonconnect/protocol", [\
+      ["npm:2.2.6", {\
+        "packageLocation": "../../../.yarn/berry/cache/@tonconnect-protocol-npm-2.2.6-ec3e3ab5a4-10c0.zip/node_modules/@tonconnect/protocol/",\
+        "packageDependencies": [\
+          ["@tonconnect/protocol", "npm:2.2.6"],\
+          ["tweetnacl", "npm:1.0.3"],\
+          ["tweetnacl-util", "npm:0.15.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tonconnect/sdk", [\
+      ["npm:3.0.5", {\
+        "packageLocation": "../../../.yarn/berry/cache/@tonconnect-sdk-npm-3.0.5-653723f630-10c0.zip/node_modules/@tonconnect/sdk/",\
+        "packageDependencies": [\
+          ["@tonconnect/sdk", "npm:3.0.5"],\
+          ["@tonconnect/isomorphic-eventsource", "npm:0.0.2"],\
+          ["@tonconnect/isomorphic-fetch", "npm:0.0.3"],\
+          ["@tonconnect/protocol", "npm:2.2.6"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1158,6 +1249,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["eventsource", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "../../../.yarn/berry/cache/eventsource-npm-2.0.2-e94c48aca3-10c0.zip/node_modules/eventsource/",\
+        "packageDependencies": [\
+          ["eventsource", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["fast-copy", [\
       ["npm:3.0.2", {\
         "packageLocation": "../../../.yarn/berry/cache/fast-copy-npm-3.0.2-d747bd131f-10c0.zip/node_modules/fast-copy/",\
@@ -1505,6 +1605,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["jssha", [\
+      ["npm:3.2.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/jssha-npm-3.2.0-c57f6fc836-10c0.zip/node_modules/jssha/",\
+        "packageDependencies": [\
+          ["jssha", "npm:3.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["keyv", [\
       ["npm:4.5.4", {\
         "packageLocation": "../../../.yarn/berry/cache/keyv-npm-4.5.4-4c8e2cf7f7-10c0.zip/node_modules/keyv/",\
@@ -1634,6 +1743,29 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/natural-compare-npm-1.4.0-97b75b362d-10c0.zip/node_modules/natural-compare/",\
         "packageDependencies": [\
           ["natural-compare", "npm:1.4.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["node-fetch", [\
+      ["npm:2.7.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/node-fetch-npm-2.7.0-587d57004e-10c0.zip/node_modules/node-fetch/",\
+        "packageDependencies": [\
+          ["node-fetch", "npm:2.7.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:3661f4509cafc1039c60245515516e92bc4e2b28aac09603166e6ffbbefd76eda6a8a8ebb00d43bdc7cf2de6b59b8ab6d31c3d6cc1733b63e001d601343af0ba#npm:2.7.0", {\
+        "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-ce5c549d1c/4/.yarn/berry/cache/node-fetch-npm-2.7.0-587d57004e-10c0.zip/node_modules/node-fetch/",\
+        "packageDependencies": [\
+          ["node-fetch", "virtual:3661f4509cafc1039c60245515516e92bc4e2b28aac09603166e6ffbbefd76eda6a8a8ebb00d43bdc7cf2de6b59b8ab6d31c3d6cc1733b63e001d601343af0ba#npm:2.7.0"],\
+          ["@types/encoding", null],\
+          ["encoding", null],\
+          ["whatwg-url", "npm:5.0.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/encoding",\
+          "encoding"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2039,6 +2171,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["symbol.inspect", [\
+      ["npm:1.0.1", {\
+        "packageLocation": "../../../.yarn/berry/cache/symbol.inspect-npm-1.0.1-daddc5b298-10c0.zip/node_modules/symbol.inspect/",\
+        "packageDependencies": [\
+          ["symbol.inspect", "npm:1.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["synckit", [\
       ["npm:0.9.1", {\
         "packageLocation": "../../../.yarn/berry/cache/synckit-npm-0.9.1-2153077746-10c0.zip/node_modules/synckit/",\
@@ -2086,6 +2227,9 @@ const RAW_RUNTIME_STATE =
           ["ton-w5", "workspace:."],\
           ["@eslint/js", "npm:9.12.0"],\
           ["@swap-coffee/sdk", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:1.2.1"],\
+          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.58.1"],\
+          ["@ton/crypto", "npm:3.3.0"],\
+          ["@tonconnect/sdk", "npm:3.0.5"],\
           ["@types/eslint__js", "npm:8.42.3"],\
           ["@types/node", "npm:22.7.4"],\
           ["@types/pino", "npm:7.0.5"],\
@@ -2102,6 +2246,15 @@ const RAW_RUNTIME_STATE =
           ["typescript-eslint", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:8.8.0"]\
         ],\
         "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["tr46", [\
+      ["npm:0.0.3", {\
+        "packageLocation": "../../../.yarn/berry/cache/tr46-npm-0.0.3-de53018915-10c0.zip/node_modules/tr46/",\
+        "packageDependencies": [\
+          ["tr46", "npm:0.0.3"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["ts-api-utils", [\
@@ -2193,6 +2346,24 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["tweetnacl", [\
+      ["npm:1.0.3", {\
+        "packageLocation": "../../../.yarn/berry/cache/tweetnacl-npm-1.0.3-b7eef04660-10c0.zip/node_modules/tweetnacl/",\
+        "packageDependencies": [\
+          ["tweetnacl", "npm:1.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["tweetnacl-util", [\
+      ["npm:0.15.1", {\
+        "packageLocation": "../../../.yarn/berry/cache/tweetnacl-util-npm-0.15.1-1a24bc512a-10c0.zip/node_modules/tweetnacl-util/",\
+        "packageDependencies": [\
+          ["tweetnacl-util", "npm:0.15.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["type-check", [\
       ["npm:0.4.0", {\
         "packageLocation": "../../../.yarn/berry/cache/type-check-npm-0.4.0-60565800ce-10c0.zip/node_modules/type-check/",\
@@ -2261,6 +2432,26 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/v8-compile-cache-lib-npm-3.0.1-4886071ece-10c0.zip/node_modules/v8-compile-cache-lib/",\
         "packageDependencies": [\
           ["v8-compile-cache-lib", "npm:3.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["webidl-conversions", [\
+      ["npm:3.0.1", {\
+        "packageLocation": "../../../.yarn/berry/cache/webidl-conversions-npm-3.0.1-60310f6a2b-10c0.zip/node_modules/webidl-conversions/",\
+        "packageDependencies": [\
+          ["webidl-conversions", "npm:3.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["whatwg-url", [\
+      ["npm:5.0.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/whatwg-url-npm-5.0.0-374fb45e60-10c0.zip/node_modules/whatwg-url/",\
+        "packageDependencies": [\
+          ["whatwg-url", "npm:5.0.0"],\
+          ["tr46", "npm:0.0.3"],\
+          ["webidl-conversions", "npm:3.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\

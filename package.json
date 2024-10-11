@@ -20,6 +20,9 @@
   },
   "dependencies": {
     "@swap-coffee/sdk": "^1.2.1",
+    "@ton/core": "^0.58.1",
+    "@ton/crypto": "^3.3.0",
+    "@tonconnect/sdk": "^3.0.5",
     "axios": "^1.7.7",
     "pino": "^9.4.0",
     "pino-pretty": "^11.2.2"
