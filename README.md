@@ -21,6 +21,11 @@ cp .env.example .env
 # update mnemonic - comma separated value
 ```
 
+```sh
+# prettier fmt code
+yarn fmt
+```
+
 ```zsh
 # dedust - swap 0.2 TON to USDT with gas
 yarn run ts-node src/dedust-native.ts
