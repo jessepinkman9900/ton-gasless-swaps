@@ -1,12 +1,6 @@
 {
   "name": "ton-w5",
   "packageManager": "yarn@4.5.0",
-  "scripts": {
-    "start-swap-cofee": "ts-node src/swap-coffee.ts",
-    "start-scmh": "ts-node src/swap-coffee-multi-hop.ts",
-    "start-dedust-gas": "ts-node src/dedust-gas.ts",
-    "start-dedust-gasless": "ts-node src/dedust-gasless.ts"
-  },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
     "@types/eslint__js": "^8.42.3",
