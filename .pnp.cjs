@@ -27,15 +27,21 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@dedust/sdk", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.8.7"],\
           ["@eslint/js", "npm:9.12.0"],\
           ["@swap-coffee/sdk", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:1.2.1"],\
-          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.58.1"],\
+          ["@ton-api/client", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.1.1"],\
+          ["@ton-api/ton-adapter", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.1.0"],\
+          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.59.0"],\
           ["@ton/crypto", "npm:3.3.0"],\
+          ["@ton/ton", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:15.1.0"],\
           ["@tonconnect/sdk", "npm:3.0.5"],\
+          ["@types/dotenv", "npm:8.2.0"],\
           ["@types/eslint__js", "npm:8.42.3"],\
           ["@types/node", "npm:22.7.4"],\
           ["@types/pino", "npm:7.0.5"],\
           ["axios", "npm:1.7.7"],\
+          ["dotenv", "npm:16.4.5"],\
           ["eslint", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:9.12.0"],\
           ["eslint-config-prettier", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:9.1.0"],\
           ["eslint-plugin-prettier", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:5.2.1"],\
@@ -56,6 +62,36 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@cspotcode/source-map-support", "npm:0.8.1"],\
           ["@jridgewell/trace-mapping", "npm:0.3.9"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@dedust/sdk", [\
+      ["npm:0.8.7", {\
+        "packageLocation": "../../../.yarn/berry/cache/@dedust-sdk-npm-0.8.7-28a5076676-10c0.zip/node_modules/@dedust/sdk/",\
+        "packageDependencies": [\
+          ["@dedust/sdk", "npm:0.8.7"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.8.7", {\
+        "packageLocation": "./.yarn/__virtual__/@dedust-sdk-virtual-605e337aa0/4/.yarn/berry/cache/@dedust-sdk-npm-0.8.7-28a5076676-10c0.zip/node_modules/@dedust/sdk/",\
+        "packageDependencies": [\
+          ["@dedust/sdk", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.8.7"],\
+          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.59.0"],\
+          ["@tonconnect/sdk", "npm:3.0.5"],\
+          ["@types/axios", null],\
+          ["@types/ton__core", null],\
+          ["@types/tonconnect__sdk", null],\
+          ["axios", "npm:1.7.7"]\
+        ],\
+        "packagePeers": [\
+          "@ton/core",\
+          "@tonconnect/sdk",\
+          "@types/axios",\
+          "@types/ton__core",\
+          "@types/tonconnect__sdk",\
+          "axios"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -292,7 +328,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@swap-coffee-sdk-virtual-9584062e34/4/.yarn/berry/cache/@swap-coffee-sdk-npm-1.2.1-5da751c100-10c0.zip/node_modules/@swap-coffee/sdk/",\
         "packageDependencies": [\
           ["@swap-coffee/sdk", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:1.2.1"],\
-          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.58.1"],\
+          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.59.0"],\
           ["@tonconnect/sdk", "npm:3.0.5"],\
           ["@types/axios", null],\
           ["@types/ton__core", null],\
@@ -310,18 +346,67 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@ton/core", [\
-      ["npm:0.58.1", {\
-        "packageLocation": "../../../.yarn/berry/cache/@ton-core-npm-0.58.1-8fa7cb0312-10c0.zip/node_modules/@ton/core/",\
+    ["@ton-api/client", [\
+      ["npm:0.1.1", {\
+        "packageLocation": "../../../.yarn/berry/cache/@ton-api-client-npm-0.1.1-845ebca556-10c0.zip/node_modules/@ton-api/client/",\
         "packageDependencies": [\
-          ["@ton/core", "npm:0.58.1"]\
+          ["@ton-api/client", "npm:0.1.1"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.58.1", {\
-        "packageLocation": "./.yarn/__virtual__/@ton-core-virtual-c41e8e279d/4/.yarn/berry/cache/@ton-core-npm-0.58.1-8fa7cb0312-10c0.zip/node_modules/@ton/core/",\
+      ["virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.1.1", {\
+        "packageLocation": "./.yarn/__virtual__/@ton-api-client-virtual-ed77136cd5/4/.yarn/berry/cache/@ton-api-client-npm-0.1.1-845ebca556-10c0.zip/node_modules/@ton-api/client/",\
         "packageDependencies": [\
-          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.58.1"],\
+          ["@ton-api/client", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.1.1"],\
+          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.59.0"],\
+          ["@types/ton__core", null],\
+          ["core-js-pure", "npm:3.38.1"]\
+        ],\
+        "packagePeers": [\
+          "@ton/core",\
+          "@types/ton__core"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@ton-api/ton-adapter", [\
+      ["npm:0.1.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/@ton-api-ton-adapter-npm-0.1.0-1097926e15-10c0.zip/node_modules/@ton-api/ton-adapter/",\
+        "packageDependencies": [\
+          ["@ton-api/ton-adapter", "npm:0.1.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/@ton-api-ton-adapter-virtual-c2255fb4f8/4/.yarn/berry/cache/@ton-api-ton-adapter-npm-0.1.0-1097926e15-10c0.zip/node_modules/@ton-api/ton-adapter/",\
+        "packageDependencies": [\
+          ["@ton-api/ton-adapter", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.1.0"],\
+          ["@ton-api/client", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.1.1"],\
+          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.59.0"],\
+          ["@types/ton-api__client", null],\
+          ["@types/ton__core", null]\
+        ],\
+        "packagePeers": [\
+          "@ton-api/client",\
+          "@ton/core",\
+          "@types/ton-api__client",\
+          "@types/ton__core"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@ton/core", [\
+      ["npm:0.59.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/@ton-core-npm-0.59.0-c41bb52cb0-10c0.zip/node_modules/@ton/core/",\
+        "packageDependencies": [\
+          ["@ton/core", "npm:0.59.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.59.0", {\
+        "packageLocation": "./.yarn/__virtual__/@ton-core-virtual-72098fa9dc/4/.yarn/berry/cache/@ton-core-npm-0.59.0-c41bb52cb0-10c0.zip/node_modules/@ton/core/",\
+        "packageDependencies": [\
+          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.59.0"],\
           ["@ton/crypto", "npm:3.3.0"],\
           ["@types/ton__crypto", null],\
           ["symbol.inspect", "npm:1.0.1"]\
@@ -351,6 +436,37 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@ton/crypto-primitives", "npm:2.1.0"],\
           ["jssha", "npm:3.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@ton/ton", [\
+      ["npm:15.1.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/@ton-ton-npm-15.1.0-1cfebd2a12-10c0.zip/node_modules/@ton/ton/",\
+        "packageDependencies": [\
+          ["@ton/ton", "npm:15.1.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:15.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/@ton-ton-virtual-360700f9bf/4/.yarn/berry/cache/@ton-ton-npm-15.1.0-1cfebd2a12-10c0.zip/node_modules/@ton/ton/",\
+        "packageDependencies": [\
+          ["@ton/ton", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:15.1.0"],\
+          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.59.0"],\
+          ["@ton/crypto", "npm:3.3.0"],\
+          ["@types/ton__core", null],\
+          ["@types/ton__crypto", null],\
+          ["axios", "npm:1.7.7"],\
+          ["dataloader", "npm:2.2.2"],\
+          ["symbol.inspect", "npm:1.0.1"],\
+          ["teslabot", "npm:1.5.0"],\
+          ["zod", "npm:3.23.8"]\
+        ],\
+        "packagePeers": [\
+          "@ton/core",\
+          "@ton/crypto",\
+          "@types/ton__core",\
+          "@types/ton__crypto"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -430,6 +546,16 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/@tsconfig-node16-npm-1.0.4-b7cb87d859-10c0.zip/node_modules/@tsconfig/node16/",\
         "packageDependencies": [\
           ["@tsconfig/node16", "npm:1.0.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/dotenv", [\
+      ["npm:8.2.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/@types-dotenv-npm-8.2.0-f4d0e3d65b-10c0.zip/node_modules/@types/dotenv/",\
+        "packageDependencies": [\
+          ["@types/dotenv", "npm:8.2.0"],\
+          ["dotenv", "npm:16.4.5"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -944,6 +1070,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["core-js-pure", [\
+      ["npm:3.38.1", {\
+        "packageLocation": "./.yarn/unplugged/core-js-pure-npm-3.38.1-799edd969b/node_modules/core-js-pure/",\
+        "packageDependencies": [\
+          ["core-js-pure", "npm:3.38.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["create-require", [\
       ["npm:1.1.1", {\
         "packageLocation": "../../../.yarn/berry/cache/create-require-npm-1.1.1-839884ca2e-10c0.zip/node_modules/create-require/",\
@@ -961,6 +1096,15 @@ const RAW_RUNTIME_STATE =
           ["path-key", "npm:3.1.1"],\
           ["shebang-command", "npm:2.0.0"],\
           ["which", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["dataloader", [\
+      ["npm:2.2.2", {\
+        "packageLocation": "../../../.yarn/berry/cache/dataloader-npm-2.2.2-828252e61d-10c0.zip/node_modules/dataloader/",\
+        "packageDependencies": [\
+          ["dataloader", "npm:2.2.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1020,6 +1164,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/diff-npm-4.0.2-73133c7102-10c0.zip/node_modules/diff/",\
         "packageDependencies": [\
           ["diff", "npm:4.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["dotenv", [\
+      ["npm:16.4.5", {\
+        "packageLocation": "../../../.yarn/berry/cache/dotenv-npm-16.4.5-bcb20eb95d-10c0.zip/node_modules/dotenv/",\
+        "packageDependencies": [\
+          ["dotenv", "npm:16.4.5"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2191,6 +2344,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["teslabot", [\
+      ["npm:1.5.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/teslabot-npm-1.5.0-10267d21c5-10c0.zip/node_modules/teslabot/",\
+        "packageDependencies": [\
+          ["teslabot", "npm:1.5.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["text-table", [\
       ["npm:0.2.0", {\
         "packageLocation": "../../../.yarn/berry/cache/text-table-npm-0.2.0-d92a778b59-10c0.zip/node_modules/text-table/",\
@@ -2225,15 +2387,21 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["ton-w5", "workspace:."],\
+          ["@dedust/sdk", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.8.7"],\
           ["@eslint/js", "npm:9.12.0"],\
           ["@swap-coffee/sdk", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:1.2.1"],\
-          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.58.1"],\
+          ["@ton-api/client", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.1.1"],\
+          ["@ton-api/ton-adapter", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.1.0"],\
+          ["@ton/core", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:0.59.0"],\
           ["@ton/crypto", "npm:3.3.0"],\
+          ["@ton/ton", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:15.1.0"],\
           ["@tonconnect/sdk", "npm:3.0.5"],\
+          ["@types/dotenv", "npm:8.2.0"],\
           ["@types/eslint__js", "npm:8.42.3"],\
           ["@types/node", "npm:22.7.4"],\
           ["@types/pino", "npm:7.0.5"],\
           ["axios", "npm:1.7.7"],\
+          ["dotenv", "npm:16.4.5"],\
           ["eslint", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:9.12.0"],\
           ["eslint-config-prettier", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:9.1.0"],\
           ["eslint-plugin-prettier", "virtual:205ecd34d425e36ed8e0b1f690460eb0ac0384b8123c1baccd717a7d126aae702291a08b2cca40032e9eda6d1c60bb3ef0034e3272d1740959d871d2ca934bec#npm:5.2.1"],\
@@ -2498,6 +2666,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/yocto-queue-npm-0.1.0-c6c9a7db29-10c0.zip/node_modules/yocto-queue/",\
         "packageDependencies": [\
           ["yocto-queue", "npm:0.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["zod", [\
+      ["npm:3.23.8", {\
+        "packageLocation": "../../../.yarn/berry/cache/zod-npm-3.23.8-11c49c85b5-10c0.zip/node_modules/zod/",\
+        "packageDependencies": [\
+          ["zod", "npm:3.23.8"]\
         ],\
         "linkType": "HARD"\
       }]\

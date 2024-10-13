@@ -22,13 +22,13 @@ async function main(): Promise<void> {
   // assets
   const assetIn: ApiTokenAddress = {
     blockchain: "ton",
-    address: "native", // stands for ton
+    address: "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs", // usdt
   };
-  const amountIn = 0.5; // 0.5 TON
+  const amountIn = 0.5; // 0.5 usdt
 
   const assetOut: ApiTokenAddress = {
     blockchain: "ton",
-    address: "EQCl0S4xvoeGeFGijTzicSA8j6GiiugmJW5zxQbZTUntre-1", // CES
+    address: "EQBlqsm144Dq6SjbPI4jjZvA1hqTIP3CvHovbIfW_t-SCALE", // scale
   };
 
   // route quote

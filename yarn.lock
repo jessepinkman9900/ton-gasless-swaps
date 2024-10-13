@@ -14,6 +14,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@dedust/sdk@npm:^0.8.7":
+  version: 0.8.7
+  resolution: "@dedust/sdk@npm:0.8.7"
+  peerDependencies:
+    "@ton/core": ">=0.52.0"
+    "@tonconnect/sdk": ">=2.1.2"
+    axios: ">=1.5.0"
+  checksum: 10c0/e8c1d7e493327432600a55645d661bc9d5979aa7ed52d0992f685ec24a041a0aeff4c9f7ec817eae18495d1d0892826a94599f7cfd992907830f8c08377148bd
+  languageName: node
+  linkType: hard
+
 "@eslint-community/eslint-utils@npm:^4.2.0, @eslint-community/eslint-utils@npm:^4.4.0":
   version: 4.4.0
   resolution: "@eslint-community/eslint-utils@npm:4.4.0"
@@ -190,14 +201,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ton/core@npm:^0.58.1":
-  version: 0.58.1
-  resolution: "@ton/core@npm:0.58.1"
+"@ton-api/client@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@ton-api/client@npm:0.1.1"
+  dependencies:
+    core-js-pure: "npm:^3.38.0"
+  peerDependencies:
+    "@ton/core": ">=0.56.0"
+  checksum: 10c0/1a47052dd6d5189098a7685c16d7c1a42cc482b97e3a26c78991682352e40bc681d4ce636d9a057388a90afc106503fdfce811567f6ca99cb113a6cffdfc201a
+  languageName: node
+  linkType: hard
+
+"@ton-api/ton-adapter@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@ton-api/ton-adapter@npm:0.1.0"
+  peerDependencies:
+    "@ton-api/client": ^0.1.0
+    "@ton/core": ">=0.56.0"
+  checksum: 10c0/a134962e9052a954eda0070817c17b7f37ed9d28ae6e032d40bcad759aef78607540d5f4e8862b5b8f6b88824a03276021df60fd3b3d248b9077c035ff3e1560
+  languageName: node
+  linkType: hard
+
+"@ton/core@npm:^0.59.0":
+  version: 0.59.0
+  resolution: "@ton/core@npm:0.59.0"
   dependencies:
     symbol.inspect: "npm:1.0.1"
   peerDependencies:
     "@ton/crypto": ">=3.2.0"
-  checksum: 10c0/86450e9e4a267ba66a6faab1540c582e2465e22901933761dc34214ae4a371ea6394aa6962b9e70a80001e14d917af40ac7e442f70734a1792717722a88deef9
+  checksum: 10c0/687521274064f511e7b2ea8290e3615995584dc3bd809cd565e6ed32d66b02d32ec964ea7a65d69eff32bd5f5b24e972f4801fc9b9dd6ece905d82fa27d41307
   languageName: node
   linkType: hard
 
@@ -218,6 +250,22 @@ __metadata:
     jssha: "npm:3.2.0"
     tweetnacl: "npm:1.0.3"
   checksum: 10c0/2fc008d4ada55f483ef7aba63a0690e09a307be340876ed95e7202253d8373daa1d07253dc031889067c578c95f0d08073903fdbc9cce643106d5ccd68095000
+  languageName: node
+  linkType: hard
+
+"@ton/ton@npm:^15.1.0":
+  version: 15.1.0
+  resolution: "@ton/ton@npm:15.1.0"
+  dependencies:
+    axios: "npm:^1.6.7"
+    dataloader: "npm:^2.0.0"
+    symbol.inspect: "npm:1.0.1"
+    teslabot: "npm:^1.3.0"
+    zod: "npm:^3.21.4"
+  peerDependencies:
+    "@ton/core": ">=0.59.0"
+    "@ton/crypto": ">=3.2.0"
+  checksum: 10c0/75375bbdddb9645cafd86faca27ae2eb37167267b92ea22ca36724fffd204d3414a11b9e65d20eae442abccd9809cfe1fc82e13571fa606a3bc8e3dfed7db621
   languageName: node
   linkType: hard
 
@@ -285,6 +333,15 @@ __metadata:
   version: 1.0.4
   resolution: "@tsconfig/node16@npm:1.0.4"
   checksum: 10c0/05f8f2734e266fb1839eb1d57290df1664fe2aa3b0fdd685a9035806daa635f7519bf6d5d9b33f6e69dd545b8c46bd6e2b5c79acb2b1f146e885f7f11a42a5bb
+  languageName: node
+  linkType: hard
+
+"@types/dotenv@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "@types/dotenv@npm:8.2.0"
+  dependencies:
+    dotenv: "npm:*"
+  checksum: 10c0/cd010440ea750acf2359fb9ed0a1681b00ce29d9c40b602fe33e51642bd44ce30ced54b23fadc05385daa415fe9f671273911bcf95381a5aaf09690b3db96938
   languageName: node
   linkType: hard
 
@@ -540,7 +597,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.7.7":
+"axios@npm:^1.6.7, axios@npm:^1.7.7":
   version: 1.7.7
   resolution: "axios@npm:1.7.7"
   dependencies:
@@ -659,6 +716,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js-pure@npm:^3.38.0":
+  version: 3.38.1
+  resolution: "core-js-pure@npm:3.38.1"
+  checksum: 10c0/466adbc0468b8c2a95b9bc49829492dece2cc6584d757c5b38555a26ed3d71f8364ac1ea3128a0a949e004e0e60206cc535ed84320982c3efb9a40c1785ddcc6
+  languageName: node
+  linkType: hard
+
 "create-require@npm:^1.1.0":
   version: 1.1.1
   resolution: "create-require@npm:1.1.1"
@@ -674,6 +738,13 @@ __metadata:
     shebang-command: "npm:^2.0.0"
     which: "npm:^2.0.1"
   checksum: 10c0/5738c312387081c98d69c98e105b6327b069197f864a60593245d64c8089c8a0a744e16349281210d56835bb9274130d825a78b2ad6853ca13cfbeffc0c31750
+  languageName: node
+  linkType: hard
+
+"dataloader@npm:^2.0.0":
+  version: 2.2.2
+  resolution: "dataloader@npm:2.2.2"
+  checksum: 10c0/125ec69f821478cf7c6b4360095db6cab939fe57876a0d2060c428091a8deee7152345189923b71a6afa694aaec463779f34b585317164016fd6f54f52cd94ba
   languageName: node
   linkType: hard
 
@@ -714,6 +785,13 @@ __metadata:
   version: 4.0.2
   resolution: "diff@npm:4.0.2"
   checksum: 10c0/81b91f9d39c4eaca068eb0c1eb0e4afbdc5bb2941d197f513dd596b820b956fef43485876226d65d497bebc15666aa2aa82c679e84f65d5f2bfbf14ee46e32c1
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:*, dotenv@npm:^16.4.5":
+  version: 16.4.5
+  resolution: "dotenv@npm:16.4.5"
+  checksum: 10c0/48d92870076832af0418b13acd6e5a5a3e83bb00df690d9812e94b24aff62b88ade955ac99a05501305b8dc8f1b0ee7638b18493deb6fe93d680e5220936292f
   languageName: node
   linkType: hard
 
@@ -1684,6 +1762,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"teslabot@npm:^1.3.0":
+  version: 1.5.0
+  resolution: "teslabot@npm:1.5.0"
+  checksum: 10c0/8972005bfc14b9b4110f2b832679cd007012d9c08c2b634fe3ae9265d2816bd65cd0111c0336affdcb58b7279786202a9e7b12b4d8ae4dc3679c7fd795f285dd
+  languageName: node
+  linkType: hard
+
 "text-table@npm:^0.2.0":
   version: 0.2.0
   resolution: "text-table@npm:0.2.0"
@@ -1713,15 +1798,21 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ton-w5@workspace:."
   dependencies:
+    "@dedust/sdk": "npm:^0.8.7"
     "@eslint/js": "npm:^9.12.0"
     "@swap-coffee/sdk": "npm:^1.2.1"
-    "@ton/core": "npm:^0.58.1"
+    "@ton-api/client": "npm:^0.1.1"
+    "@ton-api/ton-adapter": "npm:^0.1.0"
+    "@ton/core": "npm:^0.59.0"
     "@ton/crypto": "npm:^3.3.0"
+    "@ton/ton": "npm:^15.1.0"
     "@tonconnect/sdk": "npm:^3.0.5"
+    "@types/dotenv": "npm:^8.2.0"
     "@types/eslint__js": "npm:^8.42.3"
     "@types/node": "npm:^22.7.4"
     "@types/pino": "npm:^7.0.5"
     axios: "npm:^1.7.7"
+    dotenv: "npm:^16.4.5"
     eslint: "npm:^9.12.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-prettier: "npm:^5.2.1"
@@ -1929,5 +2020,12 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: 10c0/dceb44c28578b31641e13695d200d34ec4ab3966a5729814d5445b194933c096b7ced71494ce53a0e8820685d1d010df8b2422e5bf2cdea7e469d97ffbea306f
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.21.4":
+  version: 3.23.8
+  resolution: "zod@npm:3.23.8"
+  checksum: 10c0/8f14c87d6b1b53c944c25ce7a28616896319d95bc46a9660fe441adc0ed0a81253b02b5abdaeffedbeb23bdd25a0bf1c29d2c12dd919aef6447652dd295e3e69
   languageName: node
   linkType: hard
