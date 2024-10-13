@@ -1,3 +1,29 @@
+/*
+DETAILS
+- swap 0.2 USDT to SCALE
+- wallet does NOT contain gas in TON. USDT will be used for gas & swap
+  - needs ~0.3 TON gas for swap
+    - 0.25 is used for forward swap txn
+    - 0.05 is used for USDT transfer to vaults USDT wallet
+  - needs ~0.1 TON gas for USDT to TON converstion in gasless flow
+  - so wallet needs to contain >0.4 (~0.3 + ~0.1) TON worth of USDT in wallet
+
+successful txn - https://tonscan.org/tx/608192262e2ec824144c9a390470335b494c141bc3dba6f1307e8579a246fd21
+gas proxy             - EQALyITmdro9yqvnXOpxw41mke0NaonP2V0ncsMve-ASYkcP
+user                  - UQAAfErxg2ls6XBF1qRcA004b_wSio_2LysHTncp8COhQE8z
+user usdt wallet      - EQBHf1xgMGImruYFwNkUzBqPVLoqGuGdal8dNXHF-W71Dg0w
+// gas flow
+gas proxy usdt wallet - EQDPKNlPUyVG2bnflQOYf2m38CVE-539STYz6VZXvfk0QjfA
+relayer address       - EQDfvVvoSX_cDJ_L38Z2hkhA3fitZCPW1WV9mw6CcNbIrH-Q
+// swap flow
+vault usdt wallet     - EQCI2sZ8zq25yub6rHEY8FwPqV3zbCqS5oasOdljENCjh0bs
+vault usdt            - EQAYqo4u7VF0fa4DPAebk4g9lBytj2VFny7pzXR0trjtXQaO
+scale/usdt pool       - EQDyr9Q8SVYiBJnYupTk13ZMYB_iRY3QDFfpfCISCAWxUcWi
+vault scale           - EQAf4BMoiqPf0U2ADoNiEatTemiw3UXkt5H90aQpeSKC2l7f
+vault scale wallet    - EQC1K9u8EafeJCmMBk2WF-_NoYFTuVUi411XzrebbOLqk88q
+user scale wallet     - EQDzsFil69ckC7_IR-yRLqGGTPQR7oV1pHsXWAVq_5o4Yx32
+*/
+
 import {
   Asset,
   Factory,
@@ -245,12 +271,3 @@ async function main() {
 }
 
 main();
-
-/*
-NOTE
-wallet needs to have ~0.5 TON worth in USDT + the amount being swapped
-attached_amount = 0.3
-gas_needed_for_gasless swap = ~0.2
-
-successful txn - https://tonscan.org/tx/608192262e2ec824144c9a390470335b494c141bc3dba6f1307e8579a246fd21
-*/

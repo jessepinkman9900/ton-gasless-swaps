@@ -1,3 +1,12 @@
+/*
+DETAILS
+- swap 0.2 TON to USDT
+- wallet contains gas in TON
+  - needs ~0.1 TON gas for swap
+
+successful txn - https://tonscan.org/tx/2711ef4ebe0bf7b80cad2cc231db57b23467db6304f24be6163c63ee950c46b4
+*/
+
 import {
   Asset,
   Factory,
@@ -121,7 +130,3 @@ async function main() {
 }
 
 main();
-
-/*
-successful txn - https://tonscan.org/tx/2711ef4ebe0bf7b80cad2cc231db57b23467db6304f24be6163c63ee950c46b4
-*/

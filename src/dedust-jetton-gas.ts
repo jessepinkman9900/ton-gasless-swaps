@@ -1,3 +1,22 @@
+/*
+DETAILS
+- swap 0.2 USDT to SCALE
+- wallet contains gas in TON
+  - needs ~0.3 TON gas for swap
+    - 0.25 is used for forward swap txn
+    - 0.05 is used for USDT transfer to vaults USDT wallet
+
+successful txn - https://tonscan.org/tx/be5a7eb0d70cc715f3a980c42dc68cf3842107176cbc2716c6f447e1eaa59af4
+user              - UQAAfErxg2ls6XBF1qRcA004b_wSio_2LysHTncp8COhQE8z
+user usdt wallet  - EQBHf1xgMGImruYFwNkUzBqPVLoqGuGdal8dNXHF-W71Dg0w
+vault usdt wallet - EQCI2sZ8zq25yub6rHEY8FwPqV3zbCqS5oasOdljENCjh0bs
+vault usdt        - EQAYqo4u7VF0fa4DPAebk4g9lBytj2VFny7pzXR0trjtXQaO
+scale/usdt pool   - EQDyr9Q8SVYiBJnYupTk13ZMYB_iRY3QDFfpfCISCAWxUcWi
+vault scale       - EQAf4BMoiqPf0U2ADoNiEatTemiw3UXkt5H90aQpeSKC2l7f
+vault scale wallet- EQC1K9u8EafeJCmMBk2WF-_NoYFTuVUi411XzrebbOLqk88q
+user scale wallet - EQDzsFil69ckC7_IR-yRLqGGTPQR7oV1pHsXWAVq_5o4Yx32
+*/
+
 import {
   Asset,
   Factory,
@@ -139,7 +158,3 @@ async function main() {
 }
 
 main();
-
-/*
-successful txn - https://tonscan.org/tx/be5a7eb0d70cc715f3a980c42dc68cf3842107176cbc2716c6f447e1eaa59af4
-*/
