@@ -1,6 +1,9 @@
 {
   "name": "ton-w5",
   "packageManager": "yarn@4.5.0",
+  "scripts": {
+    "fmt": "prettier --write src README.md package.json tsconfig.json eslint.config.mjs"
+  },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
     "@types/eslint__js": "^8.42.3",
