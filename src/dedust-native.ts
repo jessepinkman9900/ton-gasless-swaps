@@ -15,23 +15,28 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const logger = pino({
-  level: "info", // Set the default log level
+  level: "info",
   transport: {
-    target: "pino-pretty", // Optional for pretty logging in development
+    target: "pino-pretty", // optional
     options: {
-      colorize: true, // Colorize output for better readability
+      colorize: true,
     },
   },
 });
 
 async function main() {
-  //   const tokenInAddress = Asset.native(); // ton
-  const tokenInAmount = toNano("0.1");
+  // ------------
+  // swap params
+  // ------------
+  const tokenInAmount = toNano("0.2");
   const tokenOutAddress = Address.parse(
     "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
   ); // usdt
   //   const poolTypeVolatile = true;
 
+  // ------------
+  // build payload
+  // ------------
   const tonClient = new TonClient4({
     endpoint: "https://mainnet-v4.tonhubapi.com",
   });
@@ -102,6 +107,9 @@ async function main() {
   );
   logger.info("wallet address %s", wallet.address.toString());
 
+  // ------------
+  // send txn
+  // ------------
   const sender = wallet.sender(keys.secretKey);
   let result = await nativeVault.sendSwap(sender, {
     poolAddress: pool.address,
@@ -113,3 +121,7 @@ async function main() {
 }
 
 main();
+
+/*
+successful txn - https://tonscan.org/tx/2711ef4ebe0bf7b80cad2cc231db57b23467db6304f24be6163c63ee950c46b4
+*/

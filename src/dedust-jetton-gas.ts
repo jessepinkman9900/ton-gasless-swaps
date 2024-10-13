@@ -113,7 +113,9 @@ async function main() {
   );
   logger.info("wallet address %s", wallet.address.toString());
 
-  // txn
+  // ------------
+  // send txn
+  // ------------
   logger.info("jetton in %s", tokenIn.address);
   const jettonWallet = tonClient.open(await tokenIn.getWallet(wallet.address));
   logger.info("jetton in wallet %s", jettonWallet.address);
@@ -137,3 +139,7 @@ async function main() {
 }
 
 main();
+
+/*
+successful txn - https://tonscan.org/tx/be5a7eb0d70cc715f3a980c42dc68cf3842107176cbc2716c6f447e1eaa59af4
+*/

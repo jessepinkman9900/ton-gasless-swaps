@@ -44,7 +44,7 @@ async function main() {
   const tokenInAddress = Address.parse(
     "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
   ); // usdt
-  const tokenInAmount = 100_000n; // 0.1
+  const tokenInAmount = 200_000n; // 0.2 usdt - decimal 6
   const tokenOutAddress = Address.parse(
     "EQBlqsm144Dq6SjbPI4jjZvA1hqTIP3CvHovbIfW_t-SCALE",
   ); // scale
@@ -147,9 +147,9 @@ async function main() {
 
   const vaultSwapPayload = VaultJetton.createSwapPayload({
     poolAddress: pool.address,
-    swapParams: {
-      recipientAddress: wallet.address,
-    },
+    // swapParams: {
+    //   limit: minAmountOut,
+    // },
   });
   // logger.info("vaultSwapPayload %o", vaultSwapPayload)
   const tokenInTransferPayload = beginCell()
@@ -159,8 +159,8 @@ async function main() {
     .storeAddress(vault.address) // destination
     .storeAddress(relayerAddress) // response_destination - return gas to relayer
     .storeBit(false) // null custom_payload
-    .storeCoins(toNano("0.0")) // forward_ton_amount
-    .storeBit(true) // forward_payload in this slice
+    .storeCoins(toNano(0.25)) // forward_ton_amount
+    // .storeBit(true) // forward_payload in this slice
     .storeMaybeRef(vaultSwapPayload) // forward_payload
     .endCell();
   logger.info(
@@ -168,13 +168,12 @@ async function main() {
     tokenInTransferPayload.toBoc().toString("hex"),
   );
 
-  const BASE_JETTON_SEND_AMOUNT = toNano(0.05);
   const messageToEstimate = beginCell()
     .storeWritable(
       storeMessageRelaxed(
         internal({
           to: jettonWallet.address,
-          value: BASE_JETTON_SEND_AMOUNT,
+          value: toNano(0.3), // attached_amount
           body: tokenInTransferPayload,
         }),
       ),
@@ -193,7 +192,7 @@ async function main() {
       ],
     })
     .catch((res) => res.json().then(console.error));
-  logger.info("gassless estimate %j", gaslessEstimate);
+  // logger.info("gassless estimate %j", gaslessEstimate);
   console.log("Estimated transfer:", gaslessEstimate);
 
   // sign params
@@ -227,6 +226,9 @@ async function main() {
     .endCell();
   logger.info("extMessage %s", extMessage.toBoc().toString("hex"));
 
+  // ------------
+  // send txn
+  // ------------
   // send gasless transfer
   tonApiClient.gasless
     .gaslessSend({
@@ -238,3 +240,12 @@ async function main() {
 }
 
 main();
+
+/*
+NOTE
+wallet needs to have ~0.5 TON worth in USDT + the amount being swapped
+attached_amount = 0.3
+gas_needed_for_gasless swap = ~0.2
+
+successful txn - https://tonscan.org/tx/608192262e2ec824144c9a390470335b494c141bc3dba6f1307e8579a246fd21
+*/
