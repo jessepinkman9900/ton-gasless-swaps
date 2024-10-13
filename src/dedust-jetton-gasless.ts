@@ -152,6 +152,8 @@ async function main() {
     // },
   });
   // logger.info("vaultSwapPayload %o", vaultSwapPayload)
+
+  // payload_1 - send tokenIn to tokenInVault - then perform swap on the vault
   const tokenInTransferPayload = beginCell()
     .storeUint(OP_CODES.JETTON_TRANSFER, 32)
     .storeUint(0, 64) // query_id
@@ -168,6 +170,7 @@ async function main() {
     tokenInTransferPayload.toBoc().toString("hex"),
   );
 
+  // payload - from gasless contract to tokenInWallet with payload_1
   const messageToEstimate = beginCell()
     .storeWritable(
       storeMessageRelaxed(
@@ -213,6 +216,8 @@ async function main() {
     ),
   });
 
+  // payload - sign txn with 2 messages
+  // from gasless contract to user wallet
   const extMessage = beginCell()
     .storeWritable(
       storeMessage(
