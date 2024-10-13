@@ -1,3 +1,6 @@
+/*
+DOES NOT WORK
+*/
 import pino from "pino";
 import { ApiTokenAddress, RoutingApi } from "@swap-coffee/sdk";
 // import TonConnect from "@tonconnect/sdk";
