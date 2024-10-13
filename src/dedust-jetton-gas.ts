@@ -119,16 +119,20 @@ async function main() {
   logger.info("jetton in wallet %s", jettonWallet.address);
 
   const sender = wallet.sender(keys.secretKey);
-  const txn = await jettonWallet.sendTransfer(sender, toNano("0.2"), {
-    amount: tokenInAmount,
-    destination: vault.address,
-    responseAddress: wallet.address, // return gas
-    forwardAmount: toNano("0.25"),
-    forwardPayload: VaultJetton.createSwapPayload({
-      poolAddress: pool.address,
-      limit: minAmountOut,
-    }),
-  });
+  const txn = await jettonWallet.sendTransfer(
+    sender,
+    toNano("0.3"), // attached_amount
+    {
+      amount: tokenInAmount,
+      destination: vault.address,
+      responseAddress: wallet.address, // return gas
+      forwardAmount: toNano("0.25"), // forward_amount has to be less than attached_amount
+      forwardPayload: VaultJetton.createSwapPayload({
+        poolAddress: pool.address,
+        limit: minAmountOut,
+      }),
+    },
+  );
   console.log("txn", txn);
 }
 
