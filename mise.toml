@@ -1,3 +1,4 @@
 [tools]
 node = '20'
 yarn = '3'
+pre-commit = '4.0.1'
