@@ -1,6 +1,7 @@
 /*
+DOES NOT WORK
 DETAILS
-- swap 0.2 USDT to SCALE
+- swap 0.05 SCALE TO USDT
 - use USDT for gasless txn
 - wallet does NOT contain gas in TON. USDT will be used for gas & swap
   - needs ~0.3 TON gas for swap
@@ -38,11 +39,11 @@ import { mnemonicToPrivateKey } from "@ton/crypto";
 import {
   Address,
   beginCell,
-  Cell,
-  external,
+  // Cell,
+  // external,
   internal,
-  SendMode,
-  storeMessage,
+  // SendMode,
+  // storeMessage,
   storeMessageRelaxed,
   toNano,
   TonClient4,
@@ -69,13 +70,12 @@ async function main() {
   // swap params
   // ------------
   const tokenInAddress = Address.parse(
-    "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
-  ); // usdt
-  const tokenInAmount = 200_000n; // 0.2 usdt - decimal 6
-  const tokenOutAddress = Address.parse(
     "EQBlqsm144Dq6SjbPI4jjZvA1hqTIP3CvHovbIfW_t-SCALE",
   ); // scale
-  //   const poolTypeVolatile = true;
+  const tokenInAmount = 50_000_000n; // 0.05 scale - decimal 9
+  const tokenOutAddress = Address.parse(
+    "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
+  ); // usdt
 
   // ------------
   // build payload
@@ -169,8 +169,10 @@ async function main() {
     TK_RELAYER_FEE: 0x878da6e3,
     JETTON_TRANSFER: 0xf8a7ea5,
   };
-  const jettonWallet = tonClient.open(await tokenIn.getWallet(wallet.address));
-  logger.info("jetton wallet %s", jettonWallet.address);
+  const tokenInJettonWallet = tonClient.open(await tokenIn.getWallet(wallet.address));
+  logger.info("tokenIn JettonWallet %s", tokenInJettonWallet.address);
+  const tokenOutJettonWallet = tonClient.open(await tokenOut.getWallet(wallet.address));
+  logger.info("tokenOut JettonWallet %s", tokenOutJettonWallet.address);
 
   const vaultSwapPayload = VaultJetton.createSwapPayload({
     poolAddress: pool.address,
@@ -203,7 +205,7 @@ async function main() {
     .storeWritable(
       storeMessageRelaxed(
         internal({
-          to: jettonWallet.address,
+          to: tokenInJettonWallet.address,
           value: toNano(0.3), // attached_amount
           body: tokenInTransferPayload,
         }),
@@ -213,7 +215,7 @@ async function main() {
   logger.info("jettonWallet %s", messageToEstimate.toBoc().toString("hex"));
 
   const gaslessEstimate = await tonApiClient.gasless
-    .gaslessEstimate(tokenIn.address, {
+    .gaslessEstimate(tokenOut.address, {
       walletAddress: wallet.address,
       walletPublicKey: wallet.publicKey.toString("hex"),
       messages: [
@@ -226,50 +228,50 @@ async function main() {
   // logger.info("gassless estimate %j", gaslessEstimate);
   console.log("Estimated transfer:", gaslessEstimate);
 
-  // sign params
-  const seqno = await wallet.getSeqno();
-  const tokenInTransferForSend = wallet.createTransfer({
-    seqno: seqno,
-    authType: "internal",
-    timeout: Math.ceil(Date.now() / 1000 + 5 * 60),
-    secretKey: keys.secretKey,
-    sendMode: SendMode.PAY_GAS_SEPARATELY,
-    messages: gaslessEstimate?.messages.map(
-      (msg: { address: Address; amount: bigint; payload: Cell }) =>
-        internal({
-          to: msg.address,
-          value: BigInt(msg.amount),
-          body: msg.payload,
-        }),
-    ),
-  });
+  // // sign params
+  // const seqno = await wallet.getSeqno();
+  // const tokenInTransferForSend = wallet.createTransfer({
+  //   seqno: seqno,
+  //   authType: "internal",
+  //   timeout: Math.ceil(Date.now() / 1000 + 5 * 60),
+  //   secretKey: keys.secretKey,
+  //   sendMode: SendMode.PAY_GAS_SEPARATELY,
+  //   messages: gaslessEstimate?.messages.map(
+  //     (msg: { address: Address; amount: bigint; payload: Cell }) =>
+  //       internal({
+  //         to: msg.address,
+  //         value: BigInt(msg.amount),
+  //         body: msg.payload,
+  //       }),
+  //   ),
+  // });
 
-  // payload - sign txn with 2 messages
-  // from gasless contract to user wallet
-  const extMessage = beginCell()
-    .storeWritable(
-      storeMessage(
-        external({
-          to: wallet.address,
-          init: seqno === 0 ? wallet.init : undefined,
-          body: tokenInTransferForSend,
-        }),
-      ),
-    )
-    .endCell();
-  logger.info("extMessage %s", extMessage.toBoc().toString("hex"));
+  // // payload - sign txn with 2 messages
+  // // from gasless contract to user wallet
+  // const extMessage = beginCell()
+  //   .storeWritable(
+  //     storeMessage(
+  //       external({
+  //         to: wallet.address,
+  //         init: seqno === 0 ? wallet.init : undefined,
+  //         body: tokenInTransferForSend,
+  //       }),
+  //     ),
+  //   )
+  //   .endCell();
+  // logger.info("extMessage %s", extMessage.toBoc().toString("hex"));
 
-  // ------------
-  // send txn
-  // ------------
-  // send gasless transfer
-  tonApiClient.gasless
-    .gaslessSend({
-      walletPublicKey: keys.publicKey.toString("hex"),
-      boc: extMessage,
-    })
-    .then(() => console.log("A gasless transfer sent!"))
-    .catch((res) => res.json().then(console.error));
+  // // ------------
+  // // send txn
+  // // ------------
+  // // send gasless transfer
+  // tonApiClient.gasless
+  //   .gaslessSend({
+  //     walletPublicKey: keys.publicKey.toString("hex"),
+  //     boc: extMessage,
+  //   })
+  //   .then(() => console.log("A gasless transfer sent!"))
+  //   .catch((res) => res.json().then(console.error));
 }
 
 main();

@@ -35,6 +35,9 @@ yarn run ts-node src/dedust-jetton-gas.ts
 
 # dedust - swap 0.2 USDT to SCALE + additional USDT for gasless flow
 yarn run ts-node src/dedust-jetton-in-gasless.ts
+
+# dedust - swap 0.05 SCALE to USDT + use USDT for gasless txn
+yarn run ts-node src/dedust-jetton-in-diff-gasless.ts
 ```
 
 ## Resources
